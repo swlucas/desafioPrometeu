@@ -13,8 +13,8 @@
 
 Apos fazer o clone do projeto 
 
-->composer install
-->php artisan key:generate
+    $composer install
+    $php artisan key:generate
 
 Apos isso, irá gerar um arquivo .env, você deverá alterar esses dados de acordo com seu banco de dados
 
@@ -26,12 +26,13 @@ Apos isso, irá gerar um arquivo .env, você deverá alterar esses dados de acor
     DB_PASSWORD=password
 
 
-->php artisan migrate
-->php artisan passport:client --personal
-->php artisan db:seed --class=AutomotiveParts
+    $php artisan migrate
+    $php artisan passport:client --personal
+    $php artisan db:seed --class=AutomotiveParts
 
 caso o passport dê algum tipo de error
-->php artisan vendor:publish --tag=passport-migrations
+
+    $php artisan vendor:publish --tag=passport-migrations
 
 
 

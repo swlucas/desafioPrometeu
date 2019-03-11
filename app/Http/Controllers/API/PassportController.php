@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
-use Session;
 
 class PassportController extends Controller
 {
@@ -21,7 +20,6 @@ class PassportController extends Controller
      */
     public function login(){
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
-            // $request->session()->flush();
             $user = Auth::user();
             $success['token'] =  $user->createToken('MyApp')->accessToken;
             return response()->json(['success' => $success], $this->successStatus);
@@ -54,7 +52,7 @@ class PassportController extends Controller
         $user = User::create($input);
         $success['token'] =  $user->createToken('MyApp')->accessToken;
         $success['name'] =  $user->name;
-        // $request->session()->flush();
+
         return response()->json(['success'=>$success], $this->successStatus);
     }
 

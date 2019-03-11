@@ -21,9 +21,9 @@ Route::middleware('auth:api')->group( function () {
 
     $this->group(['prefix'=>'automotiveParts'],function(){
         $this->get('/','AutomotivePartsController@getAll');
-        // $this->post('/','AutomotivePartsController@create');
-        $this->put('{id}','AutomotivePartsController@update');
-        $this->delete('{id}','AutomotivePartsController@delete');
+        // // $this->post('/','AutomotivePartsController@create');
+        // $this->put('{id}','AutomotivePartsController@update');
+        // $this->delete('{id}','AutomotivePartsController@delete');
     });
 
     $this->group(['prefix'=>'shopcart'],function(){
